@@ -1,0 +1,24 @@
+[package]
+name = "rsmc"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+description = "Experimental Rust computation kernels for PyMC comparisons"
+license = "Apache-2.0"
+publish = false
+
+[lib]
+name = "pymc_rust"
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = []
+python = ["dep:numpy", "dep:pyo3"]
+
+[dependencies]
+numpy = { version = "0.30", optional = true }
+pyo3 = { version = "0.30", optional = true }
+
+[profile.release]
+# Keep line information for native profilers without disabling optimization.
+debug = "line-tables-only"

@@ -13,3 +13,7 @@
 #   limitations under the License.
 
 """Benchmarks for PyMC."""
+
+from ._environment import configure_threads
+
+configure_threads()

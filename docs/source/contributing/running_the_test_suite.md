@@ -12,6 +12,16 @@ If you are unfamiliar with `pytest`, check out [this short video series](https:/
 With the optional dependencies installed, you can start running tests.
 Below are some example of how you might want to run certain parts of the test suite.
 
+If you have GNU Make installed, run `make test` from the repository root for an
+interactive area picker. Enter one or more folder names, such as `model sampling`,
+or the displayed numbers, separated by spaces or commas. Choose `general` for
+test files directly under `tests/`, `all` for the entire suite, or `q` to quit.
+The menu discovers test folders automatically.
+
+The target uses the repository's `.venv` Python when available, otherwise `python`.
+You can override it with `make test PYTHON=/path/to/python`. To customize pytest
+options, use, for example, `make test PYTEST_ARGS="-v -x --durations=10"`.
+
 ```{attention}
 Running the entire test suite will take hours.
 Therefore, we recommend to run just specific tests that target the parts of the codebase you're working on.

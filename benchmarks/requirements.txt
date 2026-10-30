@@ -1,0 +1,2 @@
+# Install alongside the checkout's existing PyMC environment.
+asv>=0.6.6,<0.7
